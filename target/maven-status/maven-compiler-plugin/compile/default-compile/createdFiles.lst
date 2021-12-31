@@ -1,0 +1,5 @@
+com/revature/annotations/Id.class
+com/revature/annotations/Column.class
+com/revature/inspection/ClassInspector.class
+com/revature/annotations/Entity.class
+com/revature/annotations/Table.class
