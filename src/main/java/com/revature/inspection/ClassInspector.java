@@ -14,13 +14,16 @@ import java.util.Arrays;
 
 public class ClassInspector {
 
-	public static void listClassAnnotations(Class<?> clazz) { // takes in mystery class, renames it clazz
+	public void listClassAnnotations(Class<?> clazz) { // takes in mystery class, renames it clazz
 
 		System.out.println("Printing annotations for the class: " + clazz.getName()); // finds the class and
-																								// prints it
-		for(Annotation annotation: clazz.getDeclaredAnnotations()) {
+		
+
+		// prints it
+		for(Annotation annotation: clazz.getAnnotations()) {
 			System.out.println("annotation is: " + annotation);
 		}
+		
 		System.out.println();
 	}
 
@@ -37,6 +40,9 @@ public class ClassInspector {
 		}
 	}
 
+	
+// 	
+	
 	public static void listNonPublicFields(Class<?> clazz) {
 		System.out.println("Priting non public fields of class " + clazz.getName());
 
@@ -53,6 +59,7 @@ public class ClassInspector {
 			System.out.println("\tField Name: " + field.getName());
 			System.out.println("\tField Type: " + field.getType());
 			System.out.println("\tIs field primative? " + field.getType().isPrimitive());
+			
 			System.out.println("\tModifiers bit value: " + Integer.toBinaryString(field.getModifiers()));
 			System.out.println("\tdeclared annotations: " + Arrays.toString(field.getAnnotations()));
 
